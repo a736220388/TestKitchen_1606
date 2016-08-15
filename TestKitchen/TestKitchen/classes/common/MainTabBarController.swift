@@ -9,6 +9,43 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
+    
+    private var array:Array<Dictionary<String,String>>?{
+        
+        get{
+            let path = NSBundle.mainBundle().pathForResource("Ctrl", ofType: "json")
+            var myArray:Array<Dictionary<String,String>>? = nil
+            if let filePath = path{
+                let data = NSData(contentsOfFile: filePath)
+                if let jsonData = data{
+                    do{
+                        let jsonValue = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .MutableContainers)
+                        if jsonValue.isKindOfClass(NSArray.self){
+                            myArray = jsonValue as? Array<Dictionary<String,String>>
+                        }
+                    }catch{
+                        print(error)
+                        return nil
+                    }
+                    
+                }
+            }
+            return myArray
+        }
+ 
+        /*
+        get{
+            let path = NSBundle.mainBundle().pathForResource("Ctrl", ofType: "json")
+            var myArray:Array<Dictionary<String,String>>? = nil
+            if let filePath = path{
+                let tmpArray = NSArray(contentsOfFile: path!)
+                myArray = tmpArray as? Array<Dictionary<String,String>>
+            }
+            return myArray
+        }
+         */
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +55,15 @@ class MainTabBarController: UITabBarController {
     }
     //创建试图控制器
     func createViewControllers(){
-        let ctrlNames = ["CookBookViewController","CommunityViewController","MallViewController","FoodClassViewController","ProfileViewController"]
+        var ctrlNames = [String]()
+        if let tmpArray = self.array{
+            for dict in tmpArray{
+                let name = dict["ctrlName"]
+                ctrlNames.append(name!)
+            }
+        }else{
+            ctrlNames = ["CookBookViewController","CommunityViewController","MallViewController","FoodClassViewController","ProfileViewController"]
+        }
         var vCtrlArray = Array<UINavigationController>()
         for i in 0..<ctrlNames.count{
             let ctrlName = "TestKitchen." + ctrlNames[i]
