@@ -46,6 +46,8 @@
 		BC273C0C1D62B9AC008839EE /* saoyisao@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC273BFF1D62B9AC008839EE /* saoyisao@3x.png */; };
 		BC273C0D1D62B9AC008839EE /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC273C001D62B9AC008839EE /* search@2x.png */; };
 		BC273C0E1D62B9AC008839EE /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC273C011D62B9AC008839EE /* search@3x.png */; };
+		BC273C101D62BD88008839EE /* KTCDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC273C0F1D62BD88008839EE /* KTCDownloader.swift */; };
+		BC273C161D62C670008839EE /* CBRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC273C151D62C670008839EE /* CBRecommendModel.swift */; };
 		BCEF65F91D6151AB00B35037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF65F81D6151AB00B35037 /* AppDelegate.swift */; };
 		BCEF65FB1D6151AB00B35037 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF65FA1D6151AB00B35037 /* ViewController.swift */; };
 		BCEF65FE1D6151AB00B35037 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCEF65FC1D6151AB00B35037 /* Main.storyboard */; };
@@ -129,6 +131,8 @@
 		BC273BFF1D62B9AC008839EE /* saoyisao@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "saoyisao@3x.png"; sourceTree = "<group>"; };
 		BC273C001D62B9AC008839EE /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
 		BC273C011D62B9AC008839EE /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
+		BC273C0F1D62BD88008839EE /* KTCDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTCDownloader.swift; sourceTree = "<group>"; };
+		BC273C151D62C670008839EE /* CBRecommendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRecommendModel.swift; sourceTree = "<group>"; };
 		BCEF65F51D6151AB00B35037 /* TestKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCEF65F81D6151AB00B35037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCEF65FA1D6151AB00B35037 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +268,38 @@
 			path = nav;
 			sourceTree = "<group>";
 		};
+		BC273C111D62C61A008839EE /* recommend */ = {
+			isa = PBXGroup;
+			children = (
+				BC273C121D62C61A008839EE /* controller */,
+				BC273C131D62C61A008839EE /* model */,
+				BC273C141D62C61A008839EE /* view */,
+			);
+			path = recommend;
+			sourceTree = "<group>";
+		};
+		BC273C121D62C61A008839EE /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		BC273C131D62C61A008839EE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BC273C151D62C670008839EE /* CBRecommendModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BC273C141D62C61A008839EE /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		BCEF65EC1D6151AB00B35037 = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +379,7 @@
 				BCEF666F1D61730F00B35037 /* UIView+Util.swift */,
 				BCEF66711D6173C500B35037 /* UILabel+Util.swift */,
 				BCEF66731D61751800B35037 /* UIButton+Util.swift */,
+				BC273C0F1D62BD88008839EE /* KTCDownloader.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -390,6 +427,7 @@
 		BCEF66311D6153ED00B35037 /* cookbook */ = {
 			isa = PBXGroup;
 			children = (
+				BC273C111D62C61A008839EE /* recommend */,
 				BCEF66321D6153ED00B35037 /* homePage */,
 			);
 			path = cookbook;
@@ -815,8 +853,10 @@
 				BCEF666C1D615BBD00B35037 /* ProfileViewController.swift in Sources */,
 				BCEF65F91D6151AB00B35037 /* AppDelegate.swift in Sources */,
 				BCEF66601D615A7F00B35037 /* MainTabBarController.swift in Sources */,
+				BC273C101D62BD88008839EE /* KTCDownloader.swift in Sources */,
 				BCEF66721D6173C500B35037 /* UILabel+Util.swift in Sources */,
 				BC273BF21D62A855008839EE /* Const.swift in Sources */,
+				BC273C161D62C670008839EE /* CBRecommendModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

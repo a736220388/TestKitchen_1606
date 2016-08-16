@@ -15,6 +15,13 @@ class CookBookViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         createMyNav()
+        downloadRecommendData()
+    }
+    func downloadRecommendData(){
+        let dict = ["methodName":"SceneHome","token":"","user_id":"","version":"4.32"]
+        let downloader = KTCDownloader()
+        downloader.delegate = self
+        downloader.postWithUrl(kHostUrl, params: dict)
     }
     func createMyNav(){
         addNavBtn("saoyisao", target: self, action: #selector(scanAction), isLeft: true)
@@ -43,4 +50,13 @@ class CookBookViewController: BaseViewController {
     }
     */
 
+}
+extension CookBookViewController : KTCDownloaderDelegate{
+    func downloader(downloader: KTCDownloader, didFailWithError error: NSError) {
+        print(error)
+    }
+    func downloader(downloader: KTCDownloader, didFinishWithData data: NSData?) {
+        let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        print(str!)
+    }
 }
