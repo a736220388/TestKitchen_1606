@@ -19,7 +19,7 @@ extension UIButton{
             btn.setBackgroundImage(UIImage(named: btnBgImageName), forState: .Normal)
         }
         if let btnSelectBgImageName = selectBgImageName{
-            btn.setBackgroundImage(UIImage(named: btnSelectBgImageName), forState: .Normal)
+            btn.setBackgroundImage(UIImage(named: btnSelectBgImageName), forState: .Selected)
         }
         if let btnTarget = target{
             btn.addTarget(btnTarget, action: action, forControlEvents: .TouchUpInside)

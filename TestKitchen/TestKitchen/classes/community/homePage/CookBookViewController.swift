@@ -14,6 +14,17 @@ class CookBookViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        createMyNav()
+    }
+    func createMyNav(){
+        addNavBtn("saoyisao", target: self, action: #selector(scanAction), isLeft: true)
+        addNavBtn("search", target: self, action: #selector(searchAction), isLeft: false)
+    }
+    func scanAction(){
+        
+    }
+    func searchAction(){
+        
     }
 
     override func didReceiveMemoryWarning() {
