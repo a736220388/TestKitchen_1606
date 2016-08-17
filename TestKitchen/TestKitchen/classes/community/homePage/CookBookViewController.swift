@@ -9,13 +9,26 @@
 import UIKit
 
 class CookBookViewController: BaseViewController {
+    
+    private var recommendView:CBRecommendView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         createMyNav()
+        createHomePageView()
         downloadRecommendData()
+    }
+    func createHomePageView(){
+        automaticallyAdjustsScrollViewInsets = false
+        recommendView = CBRecommendView()
+        view.addSubview(recommendView!)
+        recommendView?.snp_makeConstraints(closure: {
+            [weak self]
+            (make) in
+            make.edges.equalTo((self?.view)!).inset(UIEdgeInsetsMake(64, 0, 49, 0))
+        })
     }
     func downloadRecommendData(){
         let dict = ["methodName":"SceneHome","token":"","user_id":"","version":"4.32"]
@@ -56,7 +69,12 @@ extension CookBookViewController : KTCDownloaderDelegate{
         print(error)
     }
     func downloader(downloader: KTCDownloader, didFinishWithData data: NSData?) {
-        let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
-        print(str!)
+        if let jsonData = data{
+            let model = CBRecommendModel.parseModel(jsonData)
+            dispatch_async(dispatch_get_main_queue(), {
+                [weak self] in
+                self!.recommendView?.model = model
+            })
+        }
     }
 }
