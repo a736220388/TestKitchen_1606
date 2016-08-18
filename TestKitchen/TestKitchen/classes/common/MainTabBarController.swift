@@ -123,8 +123,8 @@ class MainTabBarController: UITabBarController {
                 make.top.equalTo(btn).offset(32)
                 make.height.equalTo(12)
             })
-            btn.tag = 300 + i
-            label.tag = 400
+            btn.tag = 3000 + i
+            label.tag = 4000
             if i == 0{
                 btn.selected = true
                 label.textColor = UIColor.orangeColor()
@@ -132,23 +132,23 @@ class MainTabBarController: UITabBarController {
         }
     }
     func clickBtn(curBtn:UIButton){
-        let lastBtnView = self.view.viewWithTag(300+selectedIndex)
+        let lastBtnView = self.view.viewWithTag(3000+selectedIndex)
         if let tmpBtn = lastBtnView{
             let lastBtn = lastBtnView as! UIButton
-            let lastView = tmpBtn.viewWithTag(400)
+            let lastView = tmpBtn.viewWithTag(4000)
             if let tmpLabel = lastView{
                 let lastLabel = tmpLabel as! UILabel
                 lastBtn.selected = false
                 lastLabel.textColor = UIColor.grayColor()
             }
         }
-        let curLabelView = curBtn.viewWithTag(400)
+        let curLabelView = curBtn.viewWithTag(4000)
         if let tmpLabel = curLabelView{
             let curLabel = tmpLabel as! UILabel
             curBtn.selected = true
             curLabel.textColor = UIColor.orangeColor()
         }
-        selectedIndex = curBtn.tag - 300
+        selectedIndex = curBtn.tag - 3000
     }
 
     override func didReceiveMemoryWarning() {

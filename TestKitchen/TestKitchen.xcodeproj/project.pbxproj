@@ -48,6 +48,10 @@
 		BC273C0E1D62B9AC008839EE /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC273C011D62B9AC008839EE /* search@3x.png */; };
 		BC273C101D62BD88008839EE /* KTCDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC273C0F1D62BD88008839EE /* KTCDownloader.swift */; };
 		BC273C161D62C670008839EE /* CBRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC273C151D62C670008839EE /* CBRecommendModel.swift */; };
+		BC7061741D654B9B00046459 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7061731D654B9B00046459 /* Util.swift */; };
+		BC7061761D655ADF00046459 /* CBSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7061751D655ADF00046459 /* CBSearchHeaderView.swift */; };
+		BC7061791D65632500046459 /* CBRedPacketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7061771D65632500046459 /* CBRedPacketCell.swift */; };
+		BC70617A1D65632500046459 /* CBRedPacketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7061781D65632500046459 /* CBRedPacketCell.xib */; };
 		BCADC0051D63FBA20086605C /* CBRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCADC0041D63FBA20086605C /* CBRecommendView.swift */; };
 		BCADC0081D63FF490086605C /* CBRecommendADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCADC0061D63FF490086605C /* CBRecommendADCell.swift */; };
 		BCADC0091D63FF490086605C /* CBRecommendADCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCADC0071D63FF490086605C /* CBRecommendADCell.xib */; };
@@ -140,6 +144,10 @@
 		BC273C011D62B9AC008839EE /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
 		BC273C0F1D62BD88008839EE /* KTCDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTCDownloader.swift; sourceTree = "<group>"; };
 		BC273C151D62C670008839EE /* CBRecommendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRecommendModel.swift; sourceTree = "<group>"; };
+		BC7061731D654B9B00046459 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		BC7061751D655ADF00046459 /* CBSearchHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBSearchHeaderView.swift; sourceTree = "<group>"; };
+		BC7061771D65632500046459 /* CBRedPacketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRedPacketCell.swift; sourceTree = "<group>"; };
+		BC7061781D65632500046459 /* CBRedPacketCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBRedPacketCell.xib; sourceTree = "<group>"; };
 		BCADC0041D63FBA20086605C /* CBRecommendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBRecommendView.swift; path = ../model/CBRecommendView.swift; sourceTree = "<group>"; };
 		BCADC0061D63FF490086605C /* CBRecommendADCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRecommendADCell.swift; sourceTree = "<group>"; };
 		BCADC0071D63FF490086605C /* CBRecommendADCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBRecommendADCell.xib; sourceTree = "<group>"; };
@@ -315,6 +323,9 @@
 				BCADC0071D63FF490086605C /* CBRecommendADCell.xib */,
 				BCADC00F1D6417480086605C /* CBRecommendLikeCell.swift */,
 				BCADC0101D6417480086605C /* CBRecommendLikeCell.xib */,
+				BC7061751D655ADF00046459 /* CBSearchHeaderView.swift */,
+				BC7061771D65632500046459 /* CBRedPacketCell.swift */,
+				BC7061781D65632500046459 /* CBRedPacketCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -408,6 +419,7 @@
 				BCEF66731D61751800B35037 /* UIButton+Util.swift */,
 				BC273C0F1D62BD88008839EE /* KTCDownloader.swift */,
 				BCADC00A1D6407F90086605C /* UIImageView+Util.swift */,
+				BC7061731D654B9B00046459 /* Util.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -801,6 +813,7 @@
 				BC273C031D62B9AC008839EE /* LaunchImage-700@2x.png in Resources */,
 				BC273BE71D62A168008839EE /* report_select@2x.png in Resources */,
 				BCEF66551D61554000B35037 /* AppIcon29x29@3x.png in Resources */,
+				BC70617A1D65632500046459 /* CBRedPacketCell.xib in Resources */,
 				BC273C0E1D62B9AC008839EE /* search@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -876,11 +889,14 @@
 			files = (
 				BCEF65FB1D6151AB00B35037 /* ViewController.swift in Sources */,
 				BCEF66621D615AB900B35037 /* BaseViewController.swift in Sources */,
+				BC7061761D655ADF00046459 /* CBSearchHeaderView.swift in Sources */,
 				BCEF66661D615B2E00B35037 /* CommunityViewController.swift in Sources */,
 				BCEF66641D615B0400B35037 /* CookBookViewController.swift in Sources */,
 				BCADC0111D6417480086605C /* CBRecommendLikeCell.swift in Sources */,
 				BCEF66681D615B6500B35037 /* MallViewController.swift in Sources */,
 				BCEF66741D61751800B35037 /* UIButton+Util.swift in Sources */,
+				BC7061791D65632500046459 /* CBRedPacketCell.swift in Sources */,
+				BC7061741D654B9B00046459 /* Util.swift in Sources */,
 				BCEF666A1D615BA000B35037 /* FoodClassViewController.swift in Sources */,
 				BCEF66701D61730F00B35037 /* UIView+Util.swift in Sources */,
 				BCEF666C1D615BBD00B35037 /* ProfileViewController.swift in Sources */,

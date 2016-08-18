@@ -38,12 +38,23 @@ class CBRecommendView: UIView{
 }
 extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        var sectionNum = 1
+        if model?.data?.widgetList?.count > 0{
+            sectionNum += (model?.data?.widgetList?.count)!
+        }
+        return sectionNum
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rowNum = 0
         if section == 0{
             if model?.data?.banner?.count > 0{
+                rowNum = 1
+            }
+        }else{
+            let listModel = model?.data?.widgetList![section-1]
+            if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue{
+                rowNum = 1
+            }else if listModel?.widget_type?.integerValue == WidgetType.RedPackage.rawValue{
                 rowNum = 1
             }
         }
@@ -53,7 +64,14 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
         var height:CGFloat = 0
         if indexPath.section == 0{
             if model?.data?.banner?.count > 0{
-                height = 160
+                height = 120
+            }
+        }else{
+            let listModel = model?.data?.widgetList![indexPath.section-1]
+            if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue{
+                height = 80
+            }else if listModel?.widget_type?.integerValue == WidgetType.RedPackage.rawValue{
+                height = 70
             }
         }
         return height
@@ -64,7 +82,36 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             if model?.data?.banner?.count > 0{
                 cell = CBRecommendADCell.createAdCellFor(tableView, atIndexPath: indexPath, withModel: model!)
             }
+        }else{
+            let listModel = model?.data?.widgetList![indexPath.section-1]
+            if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue{
+                cell = CBRecommendLikeCell.createLikeCell(tableView, atIndexPath: indexPath, withListModel: listModel!)
+            }else if listModel?.widget_type?.integerValue == WidgetType.RedPackage.rawValue{
+                cell = CBRedPacketCell.createRedPackageCell(tableView, atIndexPath: indexPath, withModel: listModel!)
+            }
         }
         return cell
     }
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var headerView:UIView? = nil
+        if section > 0{
+            let listModel = model?.data?.widgetList![section-1]
+            if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue{
+                headerView = CBSearchHeaderView(frame: CGRectMake(0,0,kScreenWidth,44))
+                headerView?.backgroundColor = UIColor.grayColor()
+            }
+        }
+        return headerView
+    }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        var height:CGFloat = 0
+        if section > 0{
+            let listModel = model?.data?.widgetList![section-1]
+            if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue{
+                height = 44
+            }
+        }
+        return height
+    }
+    
 }
