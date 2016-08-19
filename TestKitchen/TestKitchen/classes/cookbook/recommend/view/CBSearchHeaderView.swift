@@ -12,10 +12,11 @@ class CBSearchHeaderView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let searchBar = UISearchBar(frame: CGRectMake(40,0,bounds.size.width - 40*2,bounds.size.height))
+        let searchBar = UISearchBar(frame: CGRectMake(30,8,bounds.size.width - 30*2,bounds.size.height-16))
         searchBar.barTintColor = UIColor.whiteColor()
         searchBar.placeholder = "输入菜名或食材搜索"
-        searchBar.layer.cornerRadius = 5
+        searchBar.layer.cornerRadius = 15
+        searchBar.clipsToBounds = true
 //        searchBar.alpha = 0.5
         addSubview(searchBar)
         

@@ -56,6 +56,8 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
                 rowNum = 1
             }else if listModel?.widget_type?.integerValue == WidgetType.RedPackage.rawValue{
                 rowNum = 1
+            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
+                rowNum = 1
             }
         }
         return rowNum
@@ -72,6 +74,8 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
                 height = 80
             }else if listModel?.widget_type?.integerValue == WidgetType.RedPackage.rawValue{
                 height = 70
+            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
+                height = 220
             }
         }
         return height
@@ -88,6 +92,8 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
                 cell = CBRecommendLikeCell.createLikeCell(tableView, atIndexPath: indexPath, withListModel: listModel!)
             }else if listModel?.widget_type?.integerValue == WidgetType.RedPackage.rawValue{
                 cell = CBRedPacketCell.createRedPackageCell(tableView, atIndexPath: indexPath, withModel: listModel!)
+            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
+                cell = CBRecommendNewCell.createNewCellFor(tableView, atIndexPath: indexPath, withModel: listModel!)
             }
         }
         return cell
@@ -98,7 +104,11 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             let listModel = model?.data?.widgetList![section-1]
             if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue{
                 headerView = CBSearchHeaderView(frame: CGRectMake(0,0,kScreenWidth,44))
-                headerView?.backgroundColor = UIColor.grayColor()
+                headerView?.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
+            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
+                let tmpView = CBHeaderView(frame: CGRectMake(0,0,kScreenWidth,44))
+                tmpView.configTitle((listModel?.title)!)
+                headerView = tmpView
             }
         }
         return headerView
@@ -107,7 +117,7 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
         var height:CGFloat = 0
         if section > 0{
             let listModel = model?.data?.widgetList![section-1]
-            if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue{
+            if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue || listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
                 height = 44
             }
         }

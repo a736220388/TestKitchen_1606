@@ -12,4 +12,5 @@ import Foundation
 public enum WidgetType:Int{
     case GuessYourLike = 1
     case RedPackage = 2
+    case NewProduct = 5
 }
