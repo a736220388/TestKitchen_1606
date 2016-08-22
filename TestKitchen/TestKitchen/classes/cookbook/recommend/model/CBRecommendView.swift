@@ -58,6 +58,12 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
                 rowNum = 1
             }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
                 rowNum = 1
+            }else if listModel?.widget_type?.integerValue == WidgetType.Special.rawValue{
+                rowNum = 1
+            }else if listModel?.widget_type?.integerValue == WidgetType.Scene.rawValue{
+                rowNum = 1
+            }else if listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
+                rowNum = (listModel?.widget_data?.count)! / 4
             }
         }
         return rowNum
@@ -76,7 +82,14 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
                 height = 70
             }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
                 height = 220
+            }else if listModel?.widget_type?.integerValue == WidgetType.Special.rawValue{
+                height = 200
+            }else if listModel?.widget_type?.integerValue == WidgetType.Scene.rawValue{
+                height = 60
+            }else if listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
+                height = 80
             }
+
         }
         return height
     }
@@ -91,9 +104,15 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue{
                 cell = CBRecommendLikeCell.createLikeCell(tableView, atIndexPath: indexPath, withListModel: listModel!)
             }else if listModel?.widget_type?.integerValue == WidgetType.RedPackage.rawValue{
-                cell = CBRedPacketCell.createRedPackageCell(tableView, atIndexPath: indexPath, withModel: listModel!)
+                cell = CBRedPacketCell.createRedPackageCell(tableView, atIndexPath: indexPath, withListModel: listModel!)
             }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
-                cell = CBRecommendNewCell.createNewCellFor(tableView, atIndexPath: indexPath, withModel: listModel!)
+                cell = CBRecommendNewCell.createNewCellFor(tableView, atIndexPath: indexPath, withListModel: listModel!)
+            }else if listModel?.widget_type?.integerValue == WidgetType.Special.rawValue{
+                cell = CBSpecialCell.createCBSpecialCellFor(tableView, atIndexPath: indexPath, withListModel: listModel!)
+            }else if listModel?.widget_type?.integerValue == WidgetType.Scene.rawValue{
+                cell = CBSenceCell.createSceneCellFor(tableView, atIndexPath: indexPath, withListModel: listModel!)
+            }else if listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
+                cell = CBTalentCell.createCBTalentCellFor(tableView, atIndexPath: indexPath, withListModel: listModel!)
             }
         }
         return cell
@@ -105,7 +124,7 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue{
                 headerView = CBSearchHeaderView(frame: CGRectMake(0,0,kScreenWidth,44))
                 headerView?.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
-            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
+            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue || listModel?.widget_type?.integerValue == WidgetType.Special.rawValue || listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
                 let tmpView = CBHeaderView(frame: CGRectMake(0,0,kScreenWidth,44))
                 tmpView.configTitle((listModel?.title)!)
                 headerView = tmpView
@@ -117,7 +136,7 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
         var height:CGFloat = 0
         if section > 0{
             let listModel = model?.data?.widgetList![section-1]
-            if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue || listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue{
+            if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue || listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue || listModel?.widget_type?.integerValue == WidgetType.Special.rawValue || listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
                 height = 44
             }
         }

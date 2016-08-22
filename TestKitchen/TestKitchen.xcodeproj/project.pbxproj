@@ -59,6 +59,12 @@
 		BCADC00E1D640A2E0086605C /* sdefaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = BCADC00D1D640A2E0086605C /* sdefaultImage.png */; };
 		BCADC0111D6417480086605C /* CBRecommendLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCADC00F1D6417480086605C /* CBRecommendLikeCell.swift */; };
 		BCADC0121D6417480086605C /* CBRecommendLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCADC0101D6417480086605C /* CBRecommendLikeCell.xib */; };
+		BCCF323B1D6A9057009A9EB8 /* CBSenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF32391D6A9057009A9EB8 /* CBSenceCell.swift */; };
+		BCCF323C1D6A9057009A9EB8 /* CBSenceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCF323A1D6A9057009A9EB8 /* CBSenceCell.xib */; };
+		BCCF323F1D6A9769009A9EB8 /* CBTalentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF323D1D6A9769009A9EB8 /* CBTalentCell.swift */; };
+		BCCF32401D6A9769009A9EB8 /* CBTalentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCF323E1D6A9769009A9EB8 /* CBTalentCell.xib */; };
+		BCCF32431D6AA60D009A9EB8 /* CBWorksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF32411D6AA60D009A9EB8 /* CBWorksCell.swift */; };
+		BCCF32441D6AA60D009A9EB8 /* CBWorksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCF32421D6AA60D009A9EB8 /* CBWorksCell.xib */; };
 		BCEF65F91D6151AB00B35037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF65F81D6151AB00B35037 /* AppDelegate.swift */; };
 		BCEF65FB1D6151AB00B35037 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF65FA1D6151AB00B35037 /* ViewController.swift */; };
 		BCEF65FE1D6151AB00B35037 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCEF65FC1D6151AB00B35037 /* Main.storyboard */; };
@@ -163,6 +169,12 @@
 		BCADC00D1D640A2E0086605C /* sdefaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sdefaultImage.png; sourceTree = "<group>"; };
 		BCADC00F1D6417480086605C /* CBRecommendLikeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRecommendLikeCell.swift; sourceTree = "<group>"; };
 		BCADC0101D6417480086605C /* CBRecommendLikeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBRecommendLikeCell.xib; sourceTree = "<group>"; };
+		BCCF32391D6A9057009A9EB8 /* CBSenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBSenceCell.swift; sourceTree = "<group>"; };
+		BCCF323A1D6A9057009A9EB8 /* CBSenceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBSenceCell.xib; sourceTree = "<group>"; };
+		BCCF323D1D6A9769009A9EB8 /* CBTalentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBTalentCell.swift; sourceTree = "<group>"; };
+		BCCF323E1D6A9769009A9EB8 /* CBTalentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBTalentCell.xib; sourceTree = "<group>"; };
+		BCCF32411D6AA60D009A9EB8 /* CBWorksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBWorksCell.swift; sourceTree = "<group>"; };
+		BCCF32421D6AA60D009A9EB8 /* CBWorksCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBWorksCell.xib; sourceTree = "<group>"; };
 		BCEF65F51D6151AB00B35037 /* TestKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCEF65F81D6151AB00B35037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCEF65FA1D6151AB00B35037 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +359,12 @@
 				BCF80B131D66AB02001CA55B /* CBHeaderView.swift */,
 				BCF80B171D66B160001CA55B /* CBSpecialCell.swift */,
 				BCF80B181D66B160001CA55B /* CBSpecialCell.xib */,
+				BCCF32391D6A9057009A9EB8 /* CBSenceCell.swift */,
+				BCCF323A1D6A9057009A9EB8 /* CBSenceCell.xib */,
+				BCCF323D1D6A9769009A9EB8 /* CBTalentCell.swift */,
+				BCCF323E1D6A9769009A9EB8 /* CBTalentCell.xib */,
+				BCCF32411D6AA60D009A9EB8 /* CBWorksCell.swift */,
+				BCCF32421D6AA60D009A9EB8 /* CBWorksCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -807,6 +825,7 @@
 				BC273C0B1D62B9AC008839EE /* saoyisao@2x.png in Resources */,
 				BCEF66561D61554000B35037 /* AppIcon40x40@2x.png in Resources */,
 				BC273BDF1D62A168008839EE /* home_select@2x.png in Resources */,
+				BCCF32441D6AA60D009A9EB8 /* CBWorksCell.xib in Resources */,
 				BC273BD91D62A168008839EE /* community_normal@2x.png in Resources */,
 				BCADC0121D6417480086605C /* CBRecommendLikeCell.xib in Resources */,
 				BCF80B111D669986001CA55B /* play-A@2x.png in Resources */,
@@ -826,6 +845,7 @@
 				BC273BE61D62A168008839EE /* report_normal@3x.png in Resources */,
 				BC273BEB1D62A168008839EE /* shike_select@2x.png in Resources */,
 				BC273BE51D62A168008839EE /* report_normal@2x.png in Resources */,
+				BCCF32401D6A9769009A9EB8 /* CBTalentCell.xib in Resources */,
 				BC273C0D1D62B9AC008839EE /* search@2x.png in Resources */,
 				BC273BE81D62A168008839EE /* report_select@3x.png in Resources */,
 				BCEF66001D6151AB00B35037 /* Assets.xcassets in Resources */,
@@ -850,6 +870,7 @@
 				BC273BE31D62A168008839EE /* mine_select@2x.png in Resources */,
 				BC273BDD1D62A168008839EE /* home_normal@2x.png in Resources */,
 				BCEF66591D61554000B35037 /* AppIcon60x60@3x.png in Resources */,
+				BCCF323C1D6A9057009A9EB8 /* CBSenceCell.xib in Resources */,
 				BCF80B0C1D669437001CA55B /* CBRecommendNewCell.xib in Resources */,
 				BCADC0091D63FF490086605C /* CBRecommendADCell.xib in Resources */,
 				BCF80B1A1D66B160001CA55B /* CBSpecialCell.xib in Resources */,
@@ -943,13 +964,16 @@
 				BCEF66681D615B6500B35037 /* MallViewController.swift in Sources */,
 				BCEF66741D61751800B35037 /* UIButton+Util.swift in Sources */,
 				BC7061791D65632500046459 /* CBRedPacketCell.swift in Sources */,
+				BCCF323B1D6A9057009A9EB8 /* CBSenceCell.swift in Sources */,
 				BC7061741D654B9B00046459 /* Util.swift in Sources */,
 				BCEF666A1D615BA000B35037 /* FoodClassViewController.swift in Sources */,
 				BCEF66701D61730F00B35037 /* UIView+Util.swift in Sources */,
+				BCCF32431D6AA60D009A9EB8 /* CBWorksCell.swift in Sources */,
 				BCEF666C1D615BBD00B35037 /* ProfileViewController.swift in Sources */,
 				BCEF65F91D6151AB00B35037 /* AppDelegate.swift in Sources */,
 				BCADC0051D63FBA20086605C /* CBRecommendView.swift in Sources */,
 				BCEF66601D615A7F00B35037 /* MainTabBarController.swift in Sources */,
+				BCCF323F1D6A9769009A9EB8 /* CBTalentCell.swift in Sources */,
 				BCADC00B1D6407F90086605C /* UIImageView+Util.swift in Sources */,
 				BC273C101D62BD88008839EE /* KTCDownloader.swift in Sources */,
 				BCEF66721D6173C500B35037 /* UILabel+Util.swift in Sources */,

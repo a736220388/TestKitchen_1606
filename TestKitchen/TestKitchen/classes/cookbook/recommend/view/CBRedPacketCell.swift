@@ -19,6 +19,9 @@ class CBRedPacketCell: UITableViewCell {
     }
     
     func showData(){
+        for sub in scrollView.subviews{
+            sub.removeFromSuperview()
+        }
         scrollView.showsHorizontalScrollIndicator = false
         let containerView = UIView.createView()
         scrollView.addSubview(containerView)
@@ -65,13 +68,13 @@ class CBRedPacketCell: UITableViewCell {
         print(index)
     }
     
-    class func createRedPackageCell(tableView:UITableView,atIndexPath indexPath:NSIndexPath,withModel model:CBRecommendWidgetListModel)->CBRedPacketCell{
+    class func createRedPackageCell(tableView:UITableView,atIndexPath indexPath:NSIndexPath,withListModel listModel:CBRecommendWidgetListModel)->CBRedPacketCell{
         let cellId = "redPacketCellId"
         var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? CBRedPacketCell
         if cell == nil{
             cell = NSBundle.mainBundle().loadNibNamed("CBRedPacketCell", owner: nil, options: nil).last as? CBRedPacketCell
         }
-        cell?.model = model
+        cell?.model = listModel
         return cell!
     }
     

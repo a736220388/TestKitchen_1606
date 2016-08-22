@@ -48,6 +48,25 @@ class CBSpecialCell: UITableViewCell {
                 }
             }
         }
+        for i in 0..<4{
+            let index = i*2+3
+            if model?.widget_data?.count>index{
+                let imageModel = model?.widget_data![index]
+                if imageModel?.type == "image"{
+                    let subView = contentView.viewWithTag(200+i)
+                    if subView?.isKindOfClass(UIButton.self) == true{
+                        let btn = subView as! UIButton
+                        btn.kf_setBackgroundImageWithURL(NSURL(string: (imageModel?.content)!), forState: .Normal, placeholderImage: UIImage(named: "sdefaultImage"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+                    }
+                }
+            }
+        }
+        let subView = contentView.viewWithTag(400)
+        if subView?.isKindOfClass(UILabel.self)==true{
+            let label = subView as! UILabel
+            label.text = (model?.desc)!
+        }
+        
     }
 
     @IBAction func clickSceneBtn(sender: UIButton) {
@@ -56,6 +75,21 @@ class CBSpecialCell: UITableViewCell {
     }
     @IBAction func clickPlayBtn(sender: UIButton) {
     }
+    
+    class func createCBSpecialCellFor(tableView:UITableView,atIndexPath indexPath:NSIndexPath,withListModel listModel:CBRecommendWidgetListModel)->CBSpecialCell{
+        let cellId = "specialCellId"
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? CBSpecialCell
+        if cell == nil{
+            cell = NSBundle.mainBundle().loadNibNamed("CBSpecialCell", owner: nil, options: nil).last as? CBSpecialCell
+        }
+        cell?.model = listModel
+        return cell!
+    }
+    
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

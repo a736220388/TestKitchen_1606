@@ -20,6 +20,10 @@ class CBRecommendADCell: UITableViewCell {
         }
     }
     func showData(){
+        for sub in scrollView.subviews{
+            sub.removeFromSuperview()
+        }
+        
         let count = bannerArray?.count
         if count > 0{
             let containerView = UIView.createView()

@@ -54,13 +54,13 @@ class CBRecommendNewCell: UITableViewCell {
             }
         }
     }
-    class func createNewCellFor(tableView:UITableView,atIndexPath indexPath:NSIndexPath,withModel model:CBRecommendWidgetListModel)->CBRecommendNewCell{
+    class func createNewCellFor(tableView:UITableView,atIndexPath indexPath:NSIndexPath,withListModel listModel:CBRecommendWidgetListModel)->CBRecommendNewCell{
         let cellId = "recommendNewCellId"
         var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? CBRecommendNewCell
         if cell == nil{
             cell = NSBundle.mainBundle().loadNibNamed("CBRecommendNewCell", owner: nil, options: nil).last as? CBRecommendNewCell
         }
-        cell?.model = model
+        cell?.model = listModel
         return cell!
     }
 
