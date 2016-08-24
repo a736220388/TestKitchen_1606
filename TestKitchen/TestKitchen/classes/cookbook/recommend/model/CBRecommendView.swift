@@ -64,6 +64,10 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
                 rowNum = 1
             }else if listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
                 rowNum = (listModel?.widget_data?.count)! / 4
+            }else if listModel?.widget_type?.integerValue == WidgetType.Works.rawValue{
+                rowNum = 1
+            }else if listModel?.widget_type?.integerValue == WidgetType.Subject.rawValue{
+                rowNum = (listModel?.widget_data?.count)! / 3
             }
         }
         return rowNum
@@ -88,8 +92,11 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
                 height = 60
             }else if listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
                 height = 80
+            }else if listModel?.widget_type?.integerValue == WidgetType.Works.rawValue{
+                height = 240
+            }else if listModel?.widget_type?.integerValue == WidgetType.Subject.rawValue{
+                height = 180
             }
-
         }
         return height
     }
@@ -113,6 +120,10 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
                 cell = CBSenceCell.createSceneCellFor(tableView, atIndexPath: indexPath, withListModel: listModel!)
             }else if listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
                 cell = CBTalentCell.createCBTalentCellFor(tableView, atIndexPath: indexPath, withListModel: listModel!)
+            }else if listModel?.widget_type?.integerValue == WidgetType.Works.rawValue{
+                cell = CBWorksCell.createWorksCellFor(tableView, atIndexPath: indexPath, withListModel: listModel!)
+            }else if listModel?.widget_type?.integerValue == WidgetType.Subject.rawValue{
+                cell = CBSubjectCell.createSubjectCellFor(tableView, atIndexPath: indexPath, withListModel: listModel!)
             }
         }
         return cell
@@ -124,7 +135,7 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
             if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue{
                 headerView = CBSearchHeaderView(frame: CGRectMake(0,0,kScreenWidth,44))
                 headerView?.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
-            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue || listModel?.widget_type?.integerValue == WidgetType.Special.rawValue || listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
+            }else if listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue || listModel?.widget_type?.integerValue == WidgetType.Special.rawValue || listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue || listModel?.widget_type?.integerValue == WidgetType.Works.rawValue || listModel?.widget_type?.integerValue == WidgetType.Subject.rawValue{
                 let tmpView = CBHeaderView(frame: CGRectMake(0,0,kScreenWidth,44))
                 tmpView.configTitle((listModel?.title)!)
                 headerView = tmpView
@@ -136,11 +147,19 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
         var height:CGFloat = 0
         if section > 0{
             let listModel = model?.data?.widgetList![section-1]
-            if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue || listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue || listModel?.widget_type?.integerValue == WidgetType.Special.rawValue || listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue{
+            if listModel?.widget_type?.integerValue == WidgetType.GuessYourLike.rawValue || listModel?.widget_type?.integerValue == WidgetType.NewProduct.rawValue || listModel?.widget_type?.integerValue == WidgetType.Special.rawValue || listModel?.widget_type?.integerValue == WidgetType.Talent.rawValue || listModel?.widget_type?.integerValue == WidgetType.Works.rawValue || listModel?.widget_type?.integerValue == WidgetType.Subject.rawValue{
                 height = 44
             }
         }
         return height
+    }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let h:CGFloat = 44
+        if scrollView.contentOffset.y > h{
+            scrollView.contentInset = UIEdgeInsetsMake(-h, 0, 0, 0)
+        }else if scrollView.contentOffset.y > 0{
+            scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0)
+        }
     }
     
 }

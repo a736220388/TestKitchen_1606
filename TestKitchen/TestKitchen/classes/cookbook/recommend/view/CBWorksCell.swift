@@ -39,7 +39,8 @@ class CBWorksCell: UITableViewCell {
                         let url = NSURL(string: (imageModel?.content)!)
                         btn.kf_setBackgroundImageWithURL(url, forState: .Normal, placeholderImage: UIImage(named: "sdefaultImage"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                         btn.layer.cornerRadius = 20
-                        btn.clipsToBounds = true
+                        //btn.clipsToBounds = true
+                        btn.layer.masksToBounds = true
                     }
                 }
             }

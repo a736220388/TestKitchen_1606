@@ -10,6 +10,9 @@ import UIKit
 import Alamofire
 public enum KTCDownloaderType:Int{
     case Default = 10
+    case Recommend     //食材首页推荐
+    case FoodMaterial  //首页食材
+    case Category      //首页分类
 }
 protocol KTCDownloaderDelegate:NSObjectProtocol {
     func downloader(downloader:KTCDownloader,didFailWithError error:NSError)
@@ -18,8 +21,12 @@ protocol KTCDownloaderDelegate:NSObjectProtocol {
 class KTCDownloader: NSObject {
     var type:KTCDownloaderType = .Default
     weak var delegate:KTCDownloaderDelegate?
-    func postWithUrl(urlString:String,params:Dictionary<String,String>?){
-        Alamofire.request(.POST, urlString, parameters: params, encoding: ParameterEncoding.URL, headers: nil).responseData { (response) in
+    func postWithUrl(urlString:String,params:Dictionary<String,String>){
+        var newParam = params
+        newParam["token"] = ""
+        newParam["user_id"] = ""
+        newParam["version"] = "4.5"
+        Alamofire.request(.POST, urlString, parameters: newParam, encoding: ParameterEncoding.URL, headers: nil).responseData { (response) in
             switch response.result{
                 case .Failure(let error):
                     self.delegate?.downloader(self, didFailWithError: error)

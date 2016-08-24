@@ -52,6 +52,11 @@
 		BC7061761D655ADF00046459 /* CBSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7061751D655ADF00046459 /* CBSearchHeaderView.swift */; };
 		BC7061791D65632500046459 /* CBRedPacketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7061771D65632500046459 /* CBRedPacketCell.swift */; };
 		BC70617A1D65632500046459 /* CBRedPacketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7061781D65632500046459 /* CBRedPacketCell.xib */; };
+		BC92EE1A1D6BDAB4003E6094 /* CBSubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC92EE181D6BDAB4003E6094 /* CBSubjectCell.swift */; };
+		BC92EE1B1D6BDAB4003E6094 /* CBSubjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC92EE191D6BDAB4003E6094 /* CBSubjectCell.xib */; };
+		BC92EE211D6BEA3C003E6094 /* CBMaterialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC92EE201D6BEA3C003E6094 /* CBMaterialModel.swift */; };
+		BC92EE231D6BF6F7003E6094 /* CBMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC92EE221D6BF6F7003E6094 /* CBMaterialView.swift */; };
+		BC92EE251D6BFC51003E6094 /* KTCSegmentCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC92EE241D6BFC51003E6094 /* KTCSegmentCtrl.swift */; };
 		BCADC0051D63FBA20086605C /* CBRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCADC0041D63FBA20086605C /* CBRecommendView.swift */; };
 		BCADC0081D63FF490086605C /* CBRecommendADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCADC0061D63FF490086605C /* CBRecommendADCell.swift */; };
 		BCADC0091D63FF490086605C /* CBRecommendADCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCADC0071D63FF490086605C /* CBRecommendADCell.xib */; };
@@ -59,6 +64,7 @@
 		BCADC00E1D640A2E0086605C /* sdefaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = BCADC00D1D640A2E0086605C /* sdefaultImage.png */; };
 		BCADC0111D6417480086605C /* CBRecommendLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCADC00F1D6417480086605C /* CBRecommendLikeCell.swift */; };
 		BCADC0121D6417480086605C /* CBRecommendLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCADC0101D6417480086605C /* CBRecommendLikeCell.xib */; };
+		BCCA1CA11D6D3B000031F7C1 /* CBMaterialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCA1CA01D6D3B000031F7C1 /* CBMaterialCell.swift */; };
 		BCCF323B1D6A9057009A9EB8 /* CBSenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF32391D6A9057009A9EB8 /* CBSenceCell.swift */; };
 		BCCF323C1D6A9057009A9EB8 /* CBSenceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCF323A1D6A9057009A9EB8 /* CBSenceCell.xib */; };
 		BCCF323F1D6A9769009A9EB8 /* CBTalentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF323D1D6A9769009A9EB8 /* CBTalentCell.swift */; };
@@ -162,6 +168,11 @@
 		BC7061751D655ADF00046459 /* CBSearchHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBSearchHeaderView.swift; sourceTree = "<group>"; };
 		BC7061771D65632500046459 /* CBRedPacketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRedPacketCell.swift; sourceTree = "<group>"; };
 		BC7061781D65632500046459 /* CBRedPacketCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBRedPacketCell.xib; sourceTree = "<group>"; };
+		BC92EE181D6BDAB4003E6094 /* CBSubjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBSubjectCell.swift; sourceTree = "<group>"; };
+		BC92EE191D6BDAB4003E6094 /* CBSubjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBSubjectCell.xib; sourceTree = "<group>"; };
+		BC92EE201D6BEA3C003E6094 /* CBMaterialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMaterialModel.swift; sourceTree = "<group>"; };
+		BC92EE221D6BF6F7003E6094 /* CBMaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMaterialView.swift; sourceTree = "<group>"; };
+		BC92EE241D6BFC51003E6094 /* KTCSegmentCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTCSegmentCtrl.swift; sourceTree = "<group>"; };
 		BCADC0041D63FBA20086605C /* CBRecommendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBRecommendView.swift; path = ../model/CBRecommendView.swift; sourceTree = "<group>"; };
 		BCADC0061D63FF490086605C /* CBRecommendADCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRecommendADCell.swift; sourceTree = "<group>"; };
 		BCADC0071D63FF490086605C /* CBRecommendADCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBRecommendADCell.xib; sourceTree = "<group>"; };
@@ -169,6 +180,7 @@
 		BCADC00D1D640A2E0086605C /* sdefaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sdefaultImage.png; sourceTree = "<group>"; };
 		BCADC00F1D6417480086605C /* CBRecommendLikeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRecommendLikeCell.swift; sourceTree = "<group>"; };
 		BCADC0101D6417480086605C /* CBRecommendLikeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBRecommendLikeCell.xib; sourceTree = "<group>"; };
+		BCCA1CA01D6D3B000031F7C1 /* CBMaterialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMaterialCell.swift; sourceTree = "<group>"; };
 		BCCF32391D6A9057009A9EB8 /* CBSenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBSenceCell.swift; sourceTree = "<group>"; };
 		BCCF323A1D6A9057009A9EB8 /* CBSenceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBSenceCell.xib; sourceTree = "<group>"; };
 		BCCF323D1D6A9769009A9EB8 /* CBTalentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBTalentCell.swift; sourceTree = "<group>"; };
@@ -365,6 +377,42 @@
 				BCCF323E1D6A9769009A9EB8 /* CBTalentCell.xib */,
 				BCCF32411D6AA60D009A9EB8 /* CBWorksCell.swift */,
 				BCCF32421D6AA60D009A9EB8 /* CBWorksCell.xib */,
+				BC92EE181D6BDAB4003E6094 /* CBSubjectCell.swift */,
+				BC92EE191D6BDAB4003E6094 /* CBSubjectCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BC92EE1C1D6BEA13003E6094 /* foodMaterial */ = {
+			isa = PBXGroup;
+			children = (
+				BC92EE1D1D6BEA13003E6094 /* controller */,
+				BC92EE1E1D6BEA13003E6094 /* model */,
+				BC92EE1F1D6BEA13003E6094 /* view */,
+			);
+			path = foodMaterial;
+			sourceTree = "<group>";
+		};
+		BC92EE1D1D6BEA13003E6094 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		BC92EE1E1D6BEA13003E6094 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BC92EE201D6BEA3C003E6094 /* CBMaterialModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BC92EE1F1D6BEA13003E6094 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BC92EE221D6BF6F7003E6094 /* CBMaterialView.swift */,
+				BCCA1CA01D6D3B000031F7C1 /* CBMaterialCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -459,6 +507,7 @@
 				BC273C0F1D62BD88008839EE /* KTCDownloader.swift */,
 				BCADC00A1D6407F90086605C /* UIImageView+Util.swift */,
 				BC7061731D654B9B00046459 /* Util.swift */,
+				BC92EE241D6BFC51003E6094 /* KTCSegmentCtrl.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -506,6 +555,7 @@
 		BCEF66311D6153ED00B35037 /* cookbook */ = {
 			isa = PBXGroup;
 			children = (
+				BC92EE1C1D6BEA13003E6094 /* foodMaterial */,
 				BC273C111D62C61A008839EE /* recommend */,
 				BCEF66321D6153ED00B35037 /* homePage */,
 			);
@@ -829,6 +879,7 @@
 				BC273BD91D62A168008839EE /* community_normal@2x.png in Resources */,
 				BCADC0121D6417480086605C /* CBRecommendLikeCell.xib in Resources */,
 				BCF80B111D669986001CA55B /* play-A@2x.png in Resources */,
+				BC92EE1B1D6BDAB4003E6094 /* CBSubjectCell.xib in Resources */,
 				BCEF66541D61554000B35037 /* AppIcon29x29@2x.png in Resources */,
 				BC273BDA1D62A168008839EE /* community_normal@3x.png in Resources */,
 				BC273BED1D62A168008839EE /* shop_normal@2x.png in Resources */,
@@ -954,6 +1005,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCEF65FB1D6151AB00B35037 /* ViewController.swift in Sources */,
+				BC92EE211D6BEA3C003E6094 /* CBMaterialModel.swift in Sources */,
 				BCF80B0B1D669437001CA55B /* CBRecommendNewCell.swift in Sources */,
 				BCEF66621D615AB900B35037 /* BaseViewController.swift in Sources */,
 				BC7061761D655ADF00046459 /* CBSearchHeaderView.swift in Sources */,
@@ -967,14 +1019,18 @@
 				BCCF323B1D6A9057009A9EB8 /* CBSenceCell.swift in Sources */,
 				BC7061741D654B9B00046459 /* Util.swift in Sources */,
 				BCEF666A1D615BA000B35037 /* FoodClassViewController.swift in Sources */,
+				BC92EE1A1D6BDAB4003E6094 /* CBSubjectCell.swift in Sources */,
+				BCCA1CA11D6D3B000031F7C1 /* CBMaterialCell.swift in Sources */,
 				BCEF66701D61730F00B35037 /* UIView+Util.swift in Sources */,
 				BCCF32431D6AA60D009A9EB8 /* CBWorksCell.swift in Sources */,
 				BCEF666C1D615BBD00B35037 /* ProfileViewController.swift in Sources */,
 				BCEF65F91D6151AB00B35037 /* AppDelegate.swift in Sources */,
 				BCADC0051D63FBA20086605C /* CBRecommendView.swift in Sources */,
 				BCEF66601D615A7F00B35037 /* MainTabBarController.swift in Sources */,
+				BC92EE231D6BF6F7003E6094 /* CBMaterialView.swift in Sources */,
 				BCCF323F1D6A9769009A9EB8 /* CBTalentCell.swift in Sources */,
 				BCADC00B1D6407F90086605C /* UIImageView+Util.swift in Sources */,
+				BC92EE251D6BFC51003E6094 /* KTCSegmentCtrl.swift in Sources */,
 				BC273C101D62BD88008839EE /* KTCDownloader.swift in Sources */,
 				BCEF66721D6173C500B35037 /* UILabel+Util.swift in Sources */,
 				BCADC0081D63FF490086605C /* CBRecommendADCell.swift in Sources */,

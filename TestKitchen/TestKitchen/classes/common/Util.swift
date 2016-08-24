@@ -16,4 +16,6 @@ public enum WidgetType:Int{
     case NewProduct = 5
     case Scene = 9
     case Talent = 4
+    case Works = 8
+    case Subject = 7
 }
