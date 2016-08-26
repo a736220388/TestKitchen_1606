@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCellId" id="KGk-i7-Jjw" customClass="FCCommentCell" customModule="TestKitchen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="evv-lk-TDg" userLabel="userImageView">
+                        <rect key="frame" x="20" y="10" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="EBY-9g-hN3"/>
+                            <constraint firstAttribute="width" constant="60" id="WV5-gc-xIO"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbH-on-4hE" userLabel="nameLabel">
+                        <rect key="frame" x="100" y="5" width="215" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="F3q-wO-D8D"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVU-Kw-WCm" userLabel="timeLabel">
+                        <rect key="frame" x="100" y="55" width="255" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="WHd-BG-VVN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY7-9H-Kh7" userLabel="reportButton">
+                        <rect key="frame" x="335" y="5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="hfR-Cc-GGJ"/>
+                            <constraint firstAttribute="width" constant="20" id="j9i-0S-EOZ"/>
+                        </constraints>
+                        <state key="normal" title="Button" backgroundImage="举报.png"/>
+                        <connections>
+                            <action selector="reportAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CXg-uD-1AW"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJA-HQ-WOX" userLabel="contentLabel">
+                        <rect key="frame" x="100" y="30" width="255" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="9EH-v4-NeS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cY7-9H-Kh7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="1Ny-ad-eBj"/>
+                    <constraint firstItem="OVU-Kw-WCm" firstAttribute="leading" secondItem="evv-lk-TDg" secondAttribute="trailing" constant="20" id="7gx-gP-jn6"/>
+                    <constraint firstAttribute="trailing" secondItem="cY7-9H-Kh7" secondAttribute="trailing" constant="20" id="9ma-qI-Ijf"/>
+                    <constraint firstAttribute="trailing" secondItem="OVU-Kw-WCm" secondAttribute="trailing" constant="20" id="BSK-dl-GQW"/>
+                    <constraint firstItem="evv-lk-TDg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="CUg-bO-xHj"/>
+                    <constraint firstItem="sbH-on-4hE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="QEq-tP-OBa"/>
+                    <constraint firstItem="OVU-Kw-WCm" firstAttribute="top" secondItem="OJA-HQ-WOX" secondAttribute="bottom" constant="5" id="Skd-FP-kgt"/>
+                    <constraint firstItem="cY7-9H-Kh7" firstAttribute="leading" secondItem="sbH-on-4hE" secondAttribute="trailing" constant="20" id="WDd-SH-PBb"/>
+                    <constraint firstAttribute="trailing" secondItem="OJA-HQ-WOX" secondAttribute="trailing" constant="20" id="a7k-Of-v1X"/>
+                    <constraint firstItem="evv-lk-TDg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="bgz-70-hgW"/>
+                    <constraint firstItem="sbH-on-4hE" firstAttribute="leading" secondItem="evv-lk-TDg" secondAttribute="trailing" constant="20" id="eId-QV-pk9"/>
+                    <constraint firstItem="OJA-HQ-WOX" firstAttribute="top" secondItem="sbH-on-4hE" secondAttribute="bottom" constant="5" id="f3a-N3-AGn"/>
+                    <constraint firstItem="OJA-HQ-WOX" firstAttribute="leading" secondItem="evv-lk-TDg" secondAttribute="trailing" constant="20" id="vqJ-ak-Oyg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="OJA-HQ-WOX" id="2mf-Kr-Olc"/>
+                <outlet property="nameLabel" destination="sbH-on-4hE" id="Mr1-dx-vBV"/>
+                <outlet property="timeLabel" destination="OVU-Kw-WCm" id="Hxo-bM-S48"/>
+                <outlet property="userImageView" destination="evv-lk-TDg" id="SYU-lM-eKF"/>
+            </connections>
+            <point key="canvasLocation" x="417.5" y="253"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="举报.png" width="56" height="66"/>
+    </resources>
+</document>

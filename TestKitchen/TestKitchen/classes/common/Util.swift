@@ -19,3 +19,5 @@ public enum WidgetType:Int{
     case Works = 8
     case Subject = 7
 }
+
+public typealias CBCellClosure = (String?,String)->Void

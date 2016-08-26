@@ -54,6 +54,7 @@ class MainTabBarController: UITabBarController {
 
         // Do any additional setup after loading the view.
         createViewControllers()
+        tabBar.hidden = true
     }
     //创建试图控制器
     func createViewControllers(){
@@ -150,6 +151,21 @@ class MainTabBarController: UITabBarController {
         }
         selectedIndex = curBtn.tag - 300
     }
+    //显示tabbar
+    func showTabbar(){
+        UIView.animateWithDuration(0.05) {
+            [weak self] in
+            self!.bgView?.hidden = false
+        }
+    }
+    //隐藏tabbar
+    func hideTabbar(){
+        UIView.animateWithDuration(0.05) {
+            [weak self] in
+            self!.bgView?.hidden = true
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -14,6 +14,8 @@ class CBRecommendADCell: UITableViewCell {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    var clickClosure:CBCellClosure?
+    
     var bannerArray:Array<CBRecommendBannerModel>?{
         didSet{
             showData()
@@ -42,6 +44,10 @@ class CBRecommendADCell: UITableViewCell {
                 let image = UIImage(named: "sdefaultImage")
                 tmpImageView.kf_setImageWithURL(url, placeholderImage: image, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
                 containerView.addSubview(tmpImageView)
+                tmpImageView.userInteractionEnabled = true
+                let g = UITapGestureRecognizer(target: self, action: #selector(tapImage(_:)))
+                tmpImageView.addGestureRecognizer(g)
+                tmpImageView.tag = 500 + i
                 tmpImageView.snp_makeConstraints(closure: { (make) in
                     make.top.bottom.equalTo(containerView)
                     make.width.equalTo(kScreenWidth)
@@ -62,14 +68,20 @@ class CBRecommendADCell: UITableViewCell {
         }
         
     }
+    func tapImage(g:UIGestureRecognizer){
+        let index = (g.view?.tag)!-500
+        let imageModel = bannerArray![index]
+        clickClosure!(nil,imageModel.banner_link!)
+    }
     
-    class func createAdCellFor(tableView:UITableView,atIndexPath indexPath:NSIndexPath,withModel model:CBRecommendModel)->CBRecommendADCell{
+    class func createAdCellFor(tableView:UITableView,atIndexPath indexPath:NSIndexPath,withModel model:CBRecommendModel,cellClosure:CBCellClosure?)->CBRecommendADCell{
         let cellId = "recommendADCellId"
         var cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? CBRecommendADCell
         if cell == nil {
             cell = NSBundle.mainBundle().loadNibNamed("CBRecommendADCell", owner: nil, options: nil).last as? CBRecommendADCell
         }
         cell?.bannerArray = model.data?.banner
+        cell?.clickClosure = cellClosure
         return cell!
     }
 

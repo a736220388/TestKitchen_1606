@@ -17,6 +17,7 @@ class BaseViewController: UIViewController {
     }
     func addNavTitle(title:String){
         let titleLabel = UILabel.createLabel(title, font: UIFont.systemFontOfSize(24), textAlignment: .Center, textColor: UIColor.blueColor())
+        titleLabel.frame = CGRectMake(80, 0, kScreenWidth-80*2, 44)
         navigationItem.titleView = titleLabel
     }
     func addNavBtn(imageName:String,target:AnyObject?,action:Selector,isLeft:Bool){
@@ -33,7 +34,7 @@ class BaseViewController: UIViewController {
         addNavBtn("nav_back_black", target: self, action: #selector(backAction), isLeft: true)
     }
     func backAction(){
-        
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CookBookViewController: BaseViewController {
+class CookBookViewController: KTCHomeViewController {
     
     var scrollView:UIScrollView?
     
@@ -124,6 +124,29 @@ class CookBookViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //显示首页推荐的数据
+    func showRecommendData(model:CBRecommendModel){
+        recommendView?.model = model
+        recommendView?.clickClosure = {
+            [weak self]
+            title,link in
+            if link.hasPrefix("app://food_course_series") == true{
+                let id = link.componentsSeparatedByString("#")[1]
+                /*
+                let startRange = NSString(string: link).rangeOfString("#")
+                let endRange = NSString(string: link).rangeOfString("#", options: NSStringCompareOptions.BackwardsSearch, range: NSMakeRange(0, link.characters.count))
+                let id = NSString(string: link).substringWithRange(NSMakeRange(startRange.location+1, endRange.location-startRange.location-1))
+                 */
+                let foodCourseCtrl = FoodCourseViewController()
+                foodCourseCtrl.seriesId = id
+                self!.navigationController?.pushViewController(foodCourseCtrl, animated: true)
+            }
+        }
+    }
+    func gotoFoodCoursePage(seriesId:String){
+        
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -147,6 +170,7 @@ extension CookBookViewController : KTCDownloaderDelegate{
                 dispatch_async(dispatch_get_main_queue(), {
                     [weak self] in
                     self!.recommendView?.model = model
+                    self?.showRecommendData(model)
                 })
             }
         }else if downloader.type == .FoodMaterial{

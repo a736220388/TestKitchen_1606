@@ -10,6 +10,8 @@ import UIKit
 
 class CBRecommendView: UIView{
 
+    var clickClosure:CBCellClosure?
+    
     private var tbView:UITableView?
     var model:CBRecommendModel?{
         didSet{
@@ -104,7 +106,7 @@ extension CBRecommendView:UITableViewDataSource,UITableViewDelegate{
         var cell = UITableViewCell()
         if indexPath.section == 0{
             if model?.data?.banner?.count > 0{
-                cell = CBRecommendADCell.createAdCellFor(tableView, atIndexPath: indexPath, withModel: model!)
+                cell = CBRecommendADCell.createAdCellFor(tableView, atIndexPath: indexPath, withModel: model!,cellClosure: clickClosure)
             }
         }else{
             let listModel = model?.data?.widgetList![indexPath.section-1]
